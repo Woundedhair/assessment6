@@ -2,6 +2,24 @@ const express = require("express");
 const bots = require("./src/botsData");
 const shuffle = require("./src/shuffle");
 
+// include and initialize the rollbar library with your access token
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: '28a093bfccec462eb4f3fe9442fa6001',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
+// record a generic message and send it to Rollbar
+rollbar.log('Up and Running!');
+rollbar.error("Some unexpected condition");
+rollbar.warning("Endpoint not properly configured");
+rollbar.info("User typed in hello");
+rollbar.debug("Hello world endpoint was called");
+//app.get('/hello world', (req, res) => {
+//});
+
+
 const playerRecord = {
   wins: 0,
   losses: 0,

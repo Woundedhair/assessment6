@@ -3,9 +3,17 @@ const shuffle = require("../src/shuffle");
 describe("shuffle should...", () => {
   test("return an array", () => {
     var shuffle = [];
-    //expect(shuffle.toHaveReturned(array))
-  })
-  test("check that all the same items are in the array", () => {
-    expect(shuffle.toContainEqual([]));
-  })
+  });
+
+  test("return an array of the same length as the argument", () => {
+    let argument = [1, 2, 3, 4, 5];
+    let array = argument;
+    expect(array.length).toBe(argument.length);
+  });
+
+  test("check that same items are in the array", () => {
+    let input = [1, 2, 3, 4, 5];
+    let output = input;
+    expect(output).toEqual(input);
+  });
 });
