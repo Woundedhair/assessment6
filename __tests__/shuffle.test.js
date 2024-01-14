@@ -12,8 +12,8 @@ describe("shuffle should...", () => {
   });
 
   test("check that same items are in the array", () => {
-    let input = [1, 2, 3, 4, 5];
-    let output = input;
-    expect(output).toEqual(input);
+    let items = [1, 2, 3, 4, 5];
+    let arrays = items;
+    expect(items).toEqual(arrays);
   });
 });

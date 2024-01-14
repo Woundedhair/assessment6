@@ -2,7 +2,7 @@ const drawBtn = document.querySelector("#draw");
 const choicesDiv = document.querySelector("#choices");
 const compDuoDiv = document.querySelector("#comp-duo");
 const playerDuoDiv = document.querySelector("#player-duo");
-const seeAllBtn = document.querySelector("#see-all");
+const seeAllBot = document.querySelector("#see-all");
 const allBotsDiv = document.querySelector("#all-bots");
 const duelBtn = document.querySelector("#duel");
 const resultsText = document.querySelector("#results");
@@ -169,10 +169,10 @@ const getPlayerStats = () => {
 
 const getAllBots = () => {
   axios.get("/api/robots").then(({ data }) => {
-    allBotsDiv.innerHTML = '#all-bots';
+    allBotsDiv.innerHTML = '';
 
-    data.forEach((bot) => {
-      let botHtml = makeRobotDisplayCard(bot);
+    data.forEach((bots) => {
+      let botHtml = makeRobotDisplayCard(bots);
       allBotsDiv.innerHTML += botHtml;
     });
   });
@@ -181,6 +181,6 @@ const getAllBots = () => {
 drawBtn.addEventListener("click", drawFive);
 duelBtn.addEventListener("click", duel);
 playAgainBtn.addEventListener("click", reset);
-seeAllBtn.addEventListener("click", getAllBots);
+seeAllBot.addEventListener("click", getAllBots);
 
 getPlayerStats();

@@ -19,7 +19,7 @@ describe("Duel Duo tests", () => {
   test("draw button displays div with id=choices", async () => {
     await driver.findElement(By.css('#draw'))
     .click();
-    await driver.wait(until.elementIsVisible(By.id("choices")), 1000);
+    await driver.wait(until.elementLocated(By.id('#choices')), 1000);
   });
 
   test("Add to duo button displays div with id=player-duo", async () => {

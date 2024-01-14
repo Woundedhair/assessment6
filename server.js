@@ -11,12 +11,12 @@ var rollbar = new Rollbar({
 })
 
 // record a generic message and send it to Rollbar
+//app.get('/hello world', (req, res) => {
 rollbar.log('Up and Running!');
 rollbar.error("Some unexpected condition");
 rollbar.warning("Endpoint not properly configured");
 rollbar.info("User typed in hello");
 rollbar.debug("Hello world endpoint was called");
-//app.get('/hello world', (req, res) => {
 //});
 
 
@@ -55,7 +55,7 @@ const calculateHealthAfterAttack = ({ playerDuo, compDuo }) => {
 
 app.get("/api/robots", (req, res) => {
   try {
-    res.status(200).send(botsArr);
+    res.status(200).send(bots);
   } catch (error) {
     console.error("ERROR GETTING BOTS", error);
     res.sendStatus(400);
